@@ -1,0 +1,23 @@
+{
+  "name": "employee_management_system_mysql",
+  "version": "1.0.0",
+  "description": "Manage employee data",
+  "main": "employee.js",
+  "dependencies": {
+    "mysql2": "^2.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BigMacD-WebDesign/Employee_Management_System_MySQL.git"
+  },
+  "author": "Scott MacDonald",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BigMacD-WebDesign/Employee_Management_System_MySQL/issues"
+  },
+  "homepage": "https://github.com/BigMacD-WebDesign/Employee_Management_System_MySQL#readme"
+}

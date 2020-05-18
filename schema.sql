@@ -13,11 +13,13 @@ CREATE TABLE department(
 CREATE TABLE role( 
 	id INTEGER,
     title VARCHAR(30),
-    salary DECIMAL(5.2),
+    salary DECIMAL(5, 2),
     department_id INTEGER,
     
     PRIMARY KEY(id)
 );
+
+
 
 CREATE TABLE employee(
 	id INTEGER,
