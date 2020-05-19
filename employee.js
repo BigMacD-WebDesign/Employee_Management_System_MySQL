@@ -1,7 +1,7 @@
 const mysql = require("mysql");
 const inquirer = require("inquirer");
 require("console.table");
-var connection 
+var connection  
     try {
          connection = mysql.createConnection({ 
             host: "localhost",
@@ -26,7 +26,7 @@ function userchoice () {
         {
             name: "employee",
             type: "list",
-            choices: ["Add Employee", "view role", "view department", "display: employee records", "display all departments", "display all roles", "exit application"]
+            choices: ["Add Employee", "Add Role", "Add Department", "Display: Employee Records", "Display All Departments", "Display All Roles", "Exit Application"]
         }
     ]).then((userresponse) => {
         switch (userresponse.employee){
@@ -105,11 +105,11 @@ function addDepartment(){
     inquirer.prompt([
         {
             type: "Input",
-            name: "departmenttName",
-            message: "Enter departmentt Name"
+            name: "departmentName",
+            message: "Enter department Name"
         }
     ]).then((res) => {
-        connection.query("INSERT INTO department(department_name)  VALUE (?);", res.departmenttName,
+        connection.query("INSERT INTO department(name)  VALUE (?);", res.departmentName,
 
          (err, result) => {
             if (err)
