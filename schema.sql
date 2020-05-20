@@ -32,3 +32,14 @@ CREATE TABLE employee(
     PRIMARY KEY(id),
     CONSTRAINT fk_role FOREIGN KEY(role_id) REFERENCES role(id)
 );
+
+INSERT INTO department(name)
+VALUE ("Development Department");
+
+INSERT INTO department(name)
+VALUE ("Accounting Department");
+
+INSERT INTO department(name)
+VALUE ("Customer Service Department");
+
+SELECT * FROM role;

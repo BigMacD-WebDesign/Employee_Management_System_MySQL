@@ -26,7 +26,7 @@ function userchoice () {
         {
             name: "employee",
             type: "list",
-            choices: ["Add Employee", "Add Role", "Add Department", "Display: Employee Records", "Display All Departments", "Display All Roles", "Exit Application"]
+            choices: ["Add Employee", "Add Role", "Add Department", "Display Employee Records", "Display All Departments", "Display All Roles", "Exit Application"]
         }
     ]).then((userresponse) => {
         switch (userresponse.employee){
@@ -36,16 +36,16 @@ function userchoice () {
             case "Add Role":
                 addRole()
                 break
-            case "Add department":
+            case "Add Department":
                 addDepartment()
                 break
-            case  "Display: employee records":
+            case  "Display Employee Records":
                 displayEmployee()
                 break
-            case "Display all departments":
+            case "Display All Departments":
                 displayDept()
                 break
-            case "Display all roles":
+            case "Display All Roles":
                 displayRoles()
                 break
                 default:
@@ -56,6 +56,7 @@ function userchoice () {
     })
 };
 
+
 function displayEmployee () {
     connection.query("SELECT * FROM employee;", function (err, res) {
         if (err)
@@ -64,6 +65,26 @@ function displayEmployee () {
         userchoice();
     });
 };
+
+function displayDept () {
+    connection.query("SELECT * FROM department;", function (err, res) {
+        if (err)
+            throw err
+        console.table(res);
+        userchoice();
+    });
+};
+
+function displayRoles () {
+    connection.query("SELECT * FROM role;", function (err, res) {
+        if (err)
+            throw err
+        console.table(res);
+        userchoice();
+    });
+};
+
+
 
 
 function addEmployee() {
@@ -120,3 +141,4 @@ function addDepartment(){
         })
     })
 }
+
