@@ -167,5 +167,5 @@ function addRole () {
             userChoice();
         })
     })
-}
+};
 
