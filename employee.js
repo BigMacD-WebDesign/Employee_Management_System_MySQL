@@ -12,7 +12,7 @@ var connection
         });
 
         console.log(`Connected to db with id: ${connection.threadId}`);
-        userchoice();
+        userChoice();
         // connection.end();
     }catch (error) {
         console.log(error);
@@ -21,7 +21,7 @@ var connection
 
 
 
-function userchoice () {
+function userChoice () {
     inquirer.prompt([
         {
             name: "employee",
@@ -56,13 +56,13 @@ function userchoice () {
     })
 };
 
-
+//Functions to display data from each individual table.
 function displayEmployee () {
     connection.query("SELECT * FROM employee;", function (err, res) {
         if (err)
             throw err
         console.table(res);
-        userchoice();
+        userChoice();
     });
 };
 
@@ -71,7 +71,7 @@ function displayDept () {
         if (err)
             throw err
         console.table(res);
-        userchoice();
+        userChoice();
     });
 };
 
@@ -80,13 +80,13 @@ function displayRoles () {
         if (err)
             throw err
         console.table(res);
-        userchoice();
+        userChoice();
     });
 };
 
 
 
-
+//Functions to add employee, roles and departments.
 function addEmployee() {
     inquirer.prompt([
         {
@@ -117,7 +117,7 @@ function addEmployee() {
                 throw err
 
             console.table(result);
-            userchoice();
+            userChoice();
         })
     })
 }
@@ -137,7 +137,34 @@ function addDepartment(){
                 throw err
 
             console.table(result);
-            userchoice();
+            userChoice();
+        })
+    })
+};
+
+function addRole () {
+    inquirer.prompt([
+        {
+            type: "Input",
+            name: "title",
+            message: "Add Role Title."
+        },
+        {
+            type: "Input",
+            name: "salary",
+            message: "Enter hourly Salary"
+        },
+        {
+            type: "Input",
+            name: "departmentId",
+            message: "Enter department ID (1-3)"
+        }
+    ]).then((res) => {
+        connection.query("INSERT INTO role(title, salary, department_id) VALUE (?, ?, ?)", [res.title, res.salary, res.departmentId], (err) => {
+            if (err) throw err
+
+            console.table(res)
+            userChoice();
         })
     })
 }
