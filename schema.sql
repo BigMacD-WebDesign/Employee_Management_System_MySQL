@@ -42,4 +42,4 @@ VALUE ("Accounting Department");
 INSERT INTO department(name)
 VALUE ("Customer Service Department");
 
-SELECT * FROM role;
+SELECT * FROM employee;

@@ -58,7 +58,7 @@ function userChoice () {
 
 //Functions to display data from each individual table.
 function displayEmployee () {
-    connection.query("SELECT * FROM employee;", function (err, res) {
+    connection.query("SELECT e.first_name, e.last_name, e.id AS employee_id, r.salary, r.title, d.name AS department_name FROM employee e LEFT JOIN employee m ON e.manager_id = m.id INNER JOIN role r ON e.role_id = r.id INNER JOIN department d ON r.department_id = d.id ORDER BY e.id;", function (err, res) {
         if (err)
             throw err
         console.table(res);
