@@ -1,4 +1,20 @@
-# Employee_Management_System_MySQL
-Database that works as a content management system for employees.
 
-    Manage all your employees from Managers to leads to entry level employees.
+# About The Author
+# Name: Scott MacDonald
+## Username: BigMacD-WebDesign
+### Location: University of Arizona
+
+First Header | Second Header
+-------------|---------------
+Project      | Employee_Management_System_MySQL
+Project URL  | https://github.com/BigMacD-WebDesign/Employee_Management_System_MySQL
+Installation | npm install
+License      | ISC
+Test         | npm test
+
+
+![GitHub Logo](https://avatars3.githubusercontent.com/u/60277883?v=4)
+
+[![GitHub license](https://img.shields.io/badge/license-ISC-blue.svg)](https://github.com/BigMacD-WebDesign/Employee_Management_System_MySQL)
+
+    
